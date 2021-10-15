@@ -1,4 +1,5 @@
 import 'dotenv/config.js'
+import('./config/database.js')
 import express from 'express'
 import path from 'path'
 import { fileURLToPath } from 'url'
@@ -20,6 +21,7 @@ import('./config/passport.js')
 // require routes
 import { router as indexRouter } from './routes/index.js'
 import { router as authRouter } from './routes/auth.js'
+import { router as treatsRouter } from './routes/treats.js'
 
 // view engine setup
 app.set(
@@ -58,6 +60,7 @@ app.use(passport.session())
 // router middleware
 app.use('/', indexRouter)
 app.use('/auth', authRouter)
+app.use('/treats', treatsRouter)
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
