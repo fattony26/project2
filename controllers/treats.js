@@ -34,7 +34,7 @@ function edit(req, res) {
         title: "Edit Treat"
       })
     })
-  }
+}
 
 export {
     index,
