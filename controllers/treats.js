@@ -1,14 +1,6 @@
 import mongoose from 'mongoose'
-import { Treat } from './../models/treat.js';
+import { Treat } from '../models/treat.js';
 
-function newTreat(req, res) {
-    res.render('treats/new')
-}
-function create(req, res) {
-    Treat.create(req.body, function(error, treat){
-        res.redirect('/treats')
-    })
-}
 function index(req, res) {
     Treat.find({}, function(error, treats){
         res.render('treats/index', {
@@ -17,8 +9,37 @@ function index(req, res) {
     })
 }
 
-export{
+function newTreat(req, res) {
+    res.render('treats/new')
+}
+
+function create(req, res) {
+    Treat.create(req.body, function(error, treat) {
+        console.log(req.body)
+        res.redirect('/treats')
+    })
+}
+
+function deleteTreat(req, res) {
+    Treat.findByIdAndDelete(req.params.id, function(err, treat) {
+      res.redirect('/treats')
+    })
+}
+
+function edit(req, res) {
+    Treat.findById(req.params.id, function(err, treat) {
+      res.render('treats/edit', {
+        treat,
+        err,
+        title: "Edit Treat"
+      })
+    })
+  }
+
+export {
+    index,
     newTreat as new,
     create,
-    index
+    deleteTreat as delete,
+    edit
 }

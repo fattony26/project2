@@ -1,5 +1,4 @@
 import 'dotenv/config.js'
-import('./config/database.js')
 import express from 'express'
 import path from 'path'
 import { fileURLToPath } from 'url'
@@ -8,15 +7,16 @@ import session from 'express-session'
 import logger from 'morgan'
 import methodOverride from 'method-override'
 import passport from 'passport'
-
-// create the express app
-const app = express()
+import { Strategy as GoogleStrategy } from 'passport-google-oauth20'
 
 // connect to MongoDB with mongoose
 import('./config/database.js')
 
 // load passport
 import('./config/passport.js')
+
+// create the express app
+const app = express()
 
 // require routes
 import { router as indexRouter } from './routes/index.js'

@@ -3,9 +3,11 @@ import * as treatsCtrl from './../controllers/treats.js';
 
 const router = Router()
 
+router.get('/', treatsCtrl.index)
 router.get('/new', treatsCtrl.new)
 router.post('/', treatsCtrl.create)
-router.get('/', treatsCtrl.index)
+router.delete("/:id", treatsCtrl.delete);
+router.get("/:id/edit", treatsCtrl.edit);
 
 export{
     router

@@ -4,12 +4,34 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stylesheets/style.css">
     <title>Document</title>
 </head>
 <body>
     <h1>See your Expenses</h1>
-    <% treats.forEach(treat => { %>
-        <h2><%= treat.Item %> </h2>
-    <% }) %>
+    <table>
+        <th>Name</th>
+        <th>Amount</th>
+        <th>Date</th>
+        <th>Time</th>
+        <% treats.forEach(treat => { %>
+            <tr>
+                <td><%= treat.item %></td>
+                <td><%= treat.amount %></td>
+                <td><%= treat.date.toLocaleDateString() %></td>
+                <td><%= treat.date.toLocaleTimeString() %></td>
+                <td>
+                <form action="/treats/<%= treat._id %>?_method=DELETE" method="POST">
+                    <button>X</button>
+                </form>
+                </td>
+            </tr>
+        <% }) %>
+    </table>
+    <br>
+    <br>
+    <a href="/treats/new">
+        <button>Add New Expense</button>
+    </a>
 </body>
 </html>

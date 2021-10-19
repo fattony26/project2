@@ -2,7 +2,7 @@
 <%- include('./partials/nav') %>
 
 <main>
-  <h1>hello, <%= user ? user.profile.name : "friend" %></h1>
+  <h1>What's up, <%= user ? user.profile.name : "my guy" %></h1>
   <% if (user?.profile.avatar) { %>
     <div>
       <img 
@@ -11,12 +11,24 @@
       >
     </div>
   <% } %>
-  <h1><%= title %></h1>
-  <h2>See what you're spending, so we can help you save</h2>
+  
+  <h2>See what you're spending, so we can help you save them big bucks, cause lord knows you need to ¬_¬</h2>
   <img src="https://www.ledreclamebords.com/Files/5/18000/18694/ProductPhotos/1000/1660078449.jpg" alt="monies" width="350px" height="250px">
   <br>
-  <p>Click "Money" below to start tracking your expenses</p>
-  <a href="/treats/new"><img src="https://icon-library.com/images/google-login-icon/google-login-icon-24.jpg" alt="googleID" width="50px" height="50px"></a>
+
+  <% if (user) { %>
+    <h3>Click here to logout</h3>
+    <a href="/auth/logout">
+      <button type="submit">Logout</button>
+    </a>
+    <h4>Click here to get log your expenses my friend.</h4>
+    <button type= "submit"><a href="/treats/new"><img src="https://cdn0.iconfinder.com/data/icons/economy-1/512/piggy_bank_euro-1024.png" width="40px" height="40px" alt="expenses page"></a></button>
+  <% } else { %>
+    <h3>Click the Gif below to login</h3>
+      <button type="submit"><a href="/auth/google"><img src="https://media2.giphy.com/media/3oKIPa2TdahY8LAAxy/giphy.gif" alt="googleID" width="250px" height="150px">
+      </button>
+    </a>
+  <% } %>
 </main>
 
 <%- include('./partials/footer') %>
