@@ -1,18 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  <h1>Edit your Expense</h1>
-  <form action="/treats" method="POST">
-  <input type="text" placeholder="Item" name="item">
-  <input type="number" placeholder="Amount" name="amount">
-  <input type="date" placeholder="Date" name="date">
-  <button type="submit">Submit</button>
+<%- include('../partials/html-head') %>
+<link rel="stylesheet" href="/stylesheets/treats/edit.css" />
+<%- include('../partials/nav') %>
+
+<main>
+<main>
+  <h1><%= title %></h1>
+  <form id="new-form" action="/treats<%= treat._id %>?_method=PUT" method="POST">
+    <label for="title-input">Title:</label>
+    <input type="text" name="title" value="<%= treat.title %>" id="title-input">
+    <label for="relase-year-input">Release Year:</label>
+    <input type="text" name="releaseYear"  value="<%= treat.releaseYear %>" id="relase-year-input">
+    <label for="mpaa-rating-select">MPAA Rating</label>
+    <select name="mpaaRating" id="mpaa-rating-select">
+      <option <%= treat.mpaaRating === 'G' ? 'selected' : '' %> value="G">G</option>
+      <option <%= treat.mpaaRating === 'PG' ? 'selected' : '' %> value="PG">PG</option>
+      <option <%= treat.mpaaRating === 'PG-13' ? 'selected' : '' %> value="PG-13">PG-13</option>
+      <option <%= treat.mpaaRating === 'R' ? 'selected' : '' %> value="R">R</option>
+    </select>
+    <label for="now-showing-checkbox">Now Showing:</label>
+    <input type="checkbox" name="nowShowing" <%= treat.nowShowing ? 'checked' : '' %>  id="now-showing-checkbox">
+    <button type="submit">Save Treat</button>
   </form>
-</body>
-</html>
+</main>
+
+<%- include("../partials/footer") %>
