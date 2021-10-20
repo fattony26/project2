@@ -29,9 +29,9 @@ function deleteTreat(req, res) {
 function edit(req, res) {
     Treat.findById(req.params.id, function(err, treat) {
       res.render('treats/edit', {
-        treat,
-        err,
-        title: "Edit Treat"
+        item,
+        amount,
+        date
       })
     })
   }
