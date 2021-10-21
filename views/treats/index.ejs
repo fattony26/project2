@@ -18,9 +18,12 @@
             <tr>
                 <td><%= treat.item %></td>
                 <td><%= treat.amount %></td>
-                <td><%= treat.date.toLocaleDateString() %></td>
-                <td><%= treat.date.toLocaleTimeString() %></td>
+                <td><%= treat.date?.toLocaleDateString() %></td>
+                <td><%= treat.date?.toLocaleTimeString() %></td>
                 <td>
+                    <form action="/treats/<%= treat._id %>?_method=PUT" method="POST">
+                        <a href="/treats/<%= treat._id %>/edit">Edit</a>
+                    </form>
                 <form action="/treats/<%= treat._id %>?_method=DELETE" method="POST">
                     <button>Delete</button>
                 </form>

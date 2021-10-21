@@ -28,18 +28,26 @@ function deleteTreat(req, res) {
 
 function edit(req, res) {
     Treat.findById(req.params.id, function(err, treat) {
+        console.log(treat)
       res.render('treats/edit', {
-        item,
-        amount,
-        date
+       treat
       })
     })
-  }
+}
+
+function update(req, res) {
+    req.body.treat = !!req.body.treat
+    Treat.findByIdAndUpdate(req.params.treatId, req.body, {new: true})
+        .then(result => {
+            res.redirect('/treats');
+        })
+}
 
 export {
     index,
     newTreat as new,
     create,
     deleteTreat as delete,
-    edit
+    edit,
+    update
 }

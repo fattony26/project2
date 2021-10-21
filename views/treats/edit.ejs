@@ -9,5 +9,13 @@
 </head>
 <body>
     <h1>Edit your Expense</h1>
+    <!-- <form action="/treats" method="POST"> -->
+      <form action="/treats/<%= treat._id %>?_method=PUT" method="POST">
+        <% // Value attribute is being set to the comment's current text %>
+      <input name="text" value="<%= treat.item %>">
+      <input name="text" value="<%= treat.amount %>">
+      <input name="text" value="<%= treat.date %>">
+      <button type="submit">Submit</button>
+      </form>
 </body>
 </html>
