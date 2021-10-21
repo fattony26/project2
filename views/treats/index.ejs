@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="stylesheets/style.css">
-    <title>Document</title>
+    <title>See your Expenses</title>
 </head>
 <body>
     <h1>See your Expenses</h1>
@@ -24,9 +24,9 @@
                     <form action="/treats/<%= treat._id %>?_method=PUT" method="POST">
                         <a href="/treats/<%= treat._id %>/edit">Edit</a>
                     </form>
-                <form action="/treats/<%= treat._id %>?_method=DELETE" method="POST">
-                    <button>Delete</button>
-                </form>
+                    <form action="/treats/<%= treat._id %>?_method=DELETE" method="POST">
+                        <button>Delete</button>
+                    </form>
                 </td>
             </tr>
         <% }) %>

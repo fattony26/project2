@@ -36,7 +36,7 @@ function edit(req, res) {
 }
 
 function update(req, res) {
-    console.log(req.params.id)
+    console.log(req.body)
     Treat.findByIdAndUpdate(req.params.id, req.body, {new: true})
     .then(result => {
             console.log("Hello", result)
