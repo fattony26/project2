@@ -36,11 +36,13 @@ function edit(req, res) {
 }
 
 function update(req, res) {
-    req.body.treat = !!req.body.treat
-    Treat.findByIdAndUpdate(req.params.treatId, req.body, {new: true})
-        .then(result => {
+    console.log(req.params.id)
+    Treat.findByIdAndUpdate(req.params.id, req.body, {new: true})
+    .then(result => {
+            console.log("Hello", result)
             res.redirect('/treats');
         })
+    .catch(error => console.log(error))
 }
 
 export {
