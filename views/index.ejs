@@ -1,6 +1,14 @@
 <%- include('./partials/html-head') %>
 <%- include('./partials/nav') %>
 
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+  </head>
 <main>
   <h1>What's up, <%= user ? user.profile.name : "my guy" %></h1>
   <% if (user?.profile.avatar) { %>
