@@ -1,8 +1,11 @@
 #navImg{
   justify-content: left;
   align-items: left;
+  margin: 0 auto;
 }
-
+a{
+  padding: 10px;
+}
 #mainBody{
   text-align: center;
 }
