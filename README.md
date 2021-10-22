@@ -2,7 +2,7 @@
 
 ### Description:
     One-Stop-Shop Expense tracker that logs your data inputs of your purchases, in the order of Item, Amount and Date of Purchase.
-  
+
 ### History:
     This project idea originated from the desire to spend, and wonder where all this spending is taking place. No better way to do that than to log your expenses yourself!
     The theme of this was inspired by "Parks n' Rec" from the "Treat Yourself" episode.
@@ -13,7 +13,6 @@
 ![Project2 Screenshot](public/images/Project2.SS2.jpg)
 ![Project2 Screenshot](public/images/Project2.SS3.jpg)
 ![Project2 Screenshot](public/images/Project2.SS4.jpg)
-    
 
 ### Technologies Used:
     Tools: Ubuntu, Command Line, VS.Code, Bootstrap CSS, Bootstrap CSS MDB, Git, GitHub, Node.js, MongoDB, Express, Azure, Google Cloud, Google, Youtube, StackOverflow, MDN, Chrome Dev Tools, Slack, Trello, Whimsical, Miro.
@@ -28,3 +27,6 @@
     -Add an income feature.
     -Feature that tracks your subscriptions.
     -Feature that has a reminder of when your bills are due.
+
+### Click Here to see the app:
+   [Treat Yourself](https://treat-yourself-tracker.herokuapp.com/)
