@@ -4,7 +4,8 @@ import { Treat } from '../models/treat.js';
 function index(req, res) {
     Treat.find({}, function(error, treats){
         res.render('treats/index', {
-            treats
+            treats,
+            user: req.user
         })
     })
 }

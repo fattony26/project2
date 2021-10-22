@@ -3,7 +3,7 @@ import * as treatsCtrl from './../controllers/treats.js';
 
 const router = Router()
 
-router.get('/', treatsCtrl.index)
+router.get('/', isLoggedIn, treatsCtrl.index)
 router.get('/new', isLoggedIn, treatsCtrl.new)
 router.post('/', isLoggedIn, treatsCtrl.create)
 router.delete('/:id', isLoggedIn, treatsCtrl.delete);
