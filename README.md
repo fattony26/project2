@@ -17,7 +17,7 @@
 ### Technologies Used:
     Tools: Ubuntu, Command Line, VS.Code, Bootstrap CSS, Bootstrap CSS MDB, Git, GitHub, Node.js, MongoDB, Express, Azure, Google Cloud, Google, Youtube, StackOverflow, MDN, Chrome Dev Tools, Slack, Trello, Whimsical, Miro.
     Languages: Markdown, HTML, CSS, JavaScript. 
-    
+
 ### Next Steps:
     -Mobile Application: Android and IOS capable.
     -State of the Art Algorithm that reads the best way to spend and save money in the future based off your past purchases.

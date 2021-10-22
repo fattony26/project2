@@ -10,37 +10,42 @@ function index(req, res) {
 }
 
 function newTreat(req, res) {
-    res.render('treats/new')
+    res.render('treats/new', {
+        user: req.user
+    })
 }
 
 function create(req, res) {
     Treat.create(req.body, function(error, treat) {
-        console.log(req.body)
-        res.redirect('/treats')
+        res.redirect('/treats', {
+            user: req.user
+        })
     })
 }
 
 function deleteTreat(req, res) {
     Treat.findByIdAndDelete(req.params.id, function(err, treat) {
-      res.redirect('/treats')
+      res.redirect('/treats', {
+        user: req.user
+      })
     })
 }
 
 function edit(req, res) {
     Treat.findById(req.params.id, function(err, treat) {
-        console.log(treat)
       res.render('treats/edit', {
-       treat
+       treat,
+       user: req.user
       })
     })
 }
 
 function update(req, res) {
-    console.log(req.body)
     Treat.findByIdAndUpdate(req.params.id, req.body, {new: true})
     .then(result => {
-            console.log("Hello", result)
-            res.redirect('/treats');
+            res.redirect('/treats', {
+                user: req.user
+            });
         })
     .catch(error => console.log(error))
 }
