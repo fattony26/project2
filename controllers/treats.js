@@ -28,12 +28,21 @@ function deleteTreat(req, res) {
 
 function edit(req, res) {
     Treat.findById(req.params.id, function(err, treat) {
+        console.log(treat)
       res.render('treats/edit', {
-        treat,
-        err,
-        title: "Edit Treat"
+       treat
       })
     })
+}
+
+function update(req, res) {
+    console.log(req.body)
+    Treat.findByIdAndUpdate(req.params.id, req.body, {new: true})
+    .then(result => {
+            console.log("Hello", result)
+            res.redirect('/treats');
+        })
+    .catch(error => console.log(error))
 }
 
 export {
@@ -41,5 +50,6 @@ export {
     newTreat as new,
     create,
     deleteTreat as delete,
-    edit
+    edit,
+    update
 }
