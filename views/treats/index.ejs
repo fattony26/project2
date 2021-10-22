@@ -1,25 +1,36 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="stylesheets/style.css">
-    <title>See your Expenses</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+        integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
 </head>
+
 <body>
     <h1>See your Expenses</h1>
-    <table>
+    
+    <table class="table table-hover">
         <th>Name</th>
         <th>Amount</th>
         <th>Date</th>
         <th>Time</th>
-        <% treats.forEach(treat => { %>
+        <% treats.forEach(treat=> { %>
             <tr>
-                <td><%= treat.item %></td>
-                <td><%= treat.amount %></td>
-                <td><%= treat.date?.toLocaleDateString() %></td>
-                <td><%= treat.date?.toLocaleTimeString() %></td>
+                <td>
+                    <%= treat.item %>
+                </td>
+                <td>
+                    <%= treat.amount %>
+                </td>
+                <td>
+                    <%= treat.date?.toLocaleDateString() %>
+                </td>
+                <td>
+                    <%= treat.date?.toLocaleTimeString() %>
+                </td>
                 <td>
                     <form action="/treats/<%= treat._id %>?_method=PUT" method="POST">
                         <a href="/treats/<%= treat._id %>/edit">Edit</a>
@@ -29,7 +40,7 @@
                     </form>
                 </td>
             </tr>
-        <% }) %>
+            <% }) %>
     </table>
     <br>
     <br>
@@ -37,4 +48,5 @@
         <button>Add New Expense</button>
     </a>
 </body>
+
 </html>
